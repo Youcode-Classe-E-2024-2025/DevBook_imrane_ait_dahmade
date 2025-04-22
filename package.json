@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Youcode-Classe-E-2024-2025/DevBook_imrane_ait_dahmade/issues"
   },
-  "homepage": "https://github.com/Youcode-Classe-E-2024-2025/DevBook_imrane_ait_dahmade#readme"
+  "homepage": "https://github.com/Youcode-Classe-E-2024-2025/DevBook_imrane_ait_dahmade#readme",
+  "dependencies": {
+    "pg": "^8.14.1"
+  }
 }
