@@ -23,8 +23,15 @@ class Devlopeur {
     
 
    async createDev(){
-       let  query = `INSERT INTO devlopeurs (name,password) VALUES ($name,$password) returning *;`;
-        const result = await db.query(query, [this.name, this.email]);
-        
+       const  query = `INSERT INTO devlopeurs (name,password) VALUES ($name,$password) returning *;`;
+        const result = await db.query(query, [this.name, this.password]);
+ 
     }
+
+  async  recupererDev(){
+        const query = `Select * from devlopeurs where name = $name AND password = $password`;
+        const  result = await db.query(query, [this.name,this.password]);
+        return result;
+    }
+
 }
