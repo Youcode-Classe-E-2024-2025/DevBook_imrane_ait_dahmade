@@ -3,6 +3,7 @@ const db = require('../demo_db_connection.js');
 class Devlopeur {
 
     constructor(){
+        this.id;
         this.name;
         this.password;
     }
@@ -33,5 +34,6 @@ class Devlopeur {
         const  result = await db.query(query, [this.name,this.password]);
         return result;
     }
+    
 
 }
