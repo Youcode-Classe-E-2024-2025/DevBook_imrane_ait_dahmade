@@ -2,10 +2,10 @@ const db = require('../demo_db_connection.js');
 
 class Devlopeur {
 
-    constructor(){
+    constructor(name,password){
         this.id;
-        this.name;
-        this.password;
+        this.name = name;
+        this.password =password;
     }
 
   static async CreateTable(){
@@ -36,4 +36,6 @@ class Devlopeur {
     }
     
 
+  
 }
+module.exports = Devlopeur;
