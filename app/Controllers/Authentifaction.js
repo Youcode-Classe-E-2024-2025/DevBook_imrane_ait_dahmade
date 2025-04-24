@@ -1,15 +1,17 @@
+
+
+const { render } = require('ejs');
 const Devlopeur = require('../Models/Devlopeur');
 
 
 
+class AuthController {   
 
-class Auth {
- 
-    constructor(name,password){
-            this.name;
-            this.password;
-    }
 
+static FormLogin (req,res){
+
+    res.render('Welecom.ejs');
+}
 
 
   Register(name,password){
@@ -31,5 +33,6 @@ class Auth {
     }
 
 }
+console.log(AuthController.FormLogin);
 
-
+module.exports = AuthController;

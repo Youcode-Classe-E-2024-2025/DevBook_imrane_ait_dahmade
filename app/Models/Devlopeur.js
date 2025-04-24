@@ -1,4 +1,4 @@
-const db = require('../demo_db_connection.js');
+// const db = require(__dirname + '/db.js');
 
 class Devlopeur {
 
