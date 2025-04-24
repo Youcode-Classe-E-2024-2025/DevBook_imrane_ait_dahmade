@@ -1,11 +1,23 @@
-const express = require('express');
+
+
+
+
+// 3yte le package ta3 express l installite 
+
+const express = require("express");
+
+// instancier dak express cree objet mno
 const app = express();
-const PORT = 3000;
+//creat le port 
+const port = 3000;
+// hna create route 
+app.get('/',(req,res)=>{
 
-app.get('/', (req, res) => {
-  res.send('Hello Express 👋');
+   res.sendFile(__dirname + '/views/Welecom.html')
 });
 
-app.listen(PORT, () => {
-  console.log(`Serveur lancé sur http://localhost:${PORT}`);
-});
+// hna aykhsna n active lweb server  had lfunction kadare mra whda 
+
+app.listen(port ,()=>{
+    console.log('i am listen');
+})
