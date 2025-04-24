@@ -13,7 +13,8 @@ const port = 3000;
 // hna create route 
 app.get('/',(req,res)=>{
 
-   res.sendFile(__dirname + '/views/Welecom.html')
+//    res.sendFile(__dirname + '/views/Welecom.html')
+res.render('Welecom.ejs');
 });
 
 // hna aykhsna n active lweb server  had lfunction kadare mra whda 
