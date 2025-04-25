@@ -16,6 +16,6 @@ const  connect = db.createConnection({
     }
 });
 
-module.exports = connectionTrue;
 
+module.exports = connect;
 
