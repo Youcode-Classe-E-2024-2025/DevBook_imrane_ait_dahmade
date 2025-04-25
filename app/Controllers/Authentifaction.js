@@ -17,21 +17,23 @@ static FormLogin (req,res){
 
 // }
 
-    register(name,password){
+    register(req,res){
 
-       const Dev = new Developer;
+        const {name , password} = req.body;
 
-       if( Dev.create(name,password)){
-        render('Home.ejs');
+       const Dev = new Developer();
+   
+       if(Dev.create(name,password)){
+        res.render('Welecom.ejs');
        }
-      
+       else {
+     res.send('error');
+       }
     }
 
 }
-console.log(AuthController.FormLogin);
-
-const login = new AuthController().login('imrane','hello123');
 
 
 
-// module.exports = AuthController;
+
+module.exports = AuthController;
