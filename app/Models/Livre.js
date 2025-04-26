@@ -60,11 +60,22 @@ class Livre {
             return false;
         }
     }
-
+    async find(id){
+        try{
+            const result = db.find('livres',{id});
+            console.log('i am here ',result);
+            return result;
+        }catch(error){
+            console.log('i am not fount what you need',error);
+            return false ;
+        }
+    }
+    
 
 
 }
 
-
+const findlivre = new Livre();
+findlivre.find('3');
 
 module.exports = Livre;

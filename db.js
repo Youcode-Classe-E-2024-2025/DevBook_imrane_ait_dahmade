@@ -104,6 +104,7 @@ class Db {
 
 
    }
+
    
    queryAsync(query, params) {
     return new Promise((resolve, reject) => {

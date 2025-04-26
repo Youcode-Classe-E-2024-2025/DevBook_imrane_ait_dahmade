@@ -38,6 +38,7 @@ class Emprunt {
         }
     }
     
+    
 
 
 
@@ -45,6 +46,5 @@ class Emprunt {
 }
 
 const emprunt = new Emprunt();
-emprunt.create(57, 3);
 
 module.exports = Emprunt;
