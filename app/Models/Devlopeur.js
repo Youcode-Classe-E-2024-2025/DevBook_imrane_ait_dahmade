@@ -1,6 +1,5 @@
+
 const db = require('../../db');
-
-
 
 class Devlopeur {
   constructor(name) {
@@ -11,15 +10,18 @@ class Devlopeur {
 
 
  
-    async create(name,password){
-   
-    const CreateEnDb = db.create('devlopeurs' , ['name' , 'password']);
-  
-
-
-
-
+  async create(name, password) {
+    try {
+      const result = await db.create('devlopeurs', { name, password });
+      console.log('Développeur inséré avec succès:', result);
+      return result;
+    } catch (err) {
+      console.error('Erreur lors de l\'insertion du développeur:', err);
+      return false;
+    }
   }
+  
+  
 }
 
 // const CreatePromise = new Promise((resolve,rejected)=>{
