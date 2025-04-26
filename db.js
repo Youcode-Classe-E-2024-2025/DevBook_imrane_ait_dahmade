@@ -21,9 +21,6 @@ class Db {
             }
         });
     }
-    
-
-
    async create(table,data){
     const keys = Object.keys(data); 
     const values = Object.values(data);
@@ -59,6 +56,19 @@ class Db {
     }catch(err){
     console.error('je ne trouver pas ' , err);
     return false;
+    }
+   }
+   async All(table){
+    const query = `SELECT * FROM ${table} `;
+    
+    try{
+        const result = await this.queryAsync(query,null);
+        console.log('this is All ' ,result );
+        return result;
+    }
+    catch(err){
+        console.log('i am not recuper  All i need my data ',err);
+        return false ;
     }
    }
    queryAsync(query, params) {

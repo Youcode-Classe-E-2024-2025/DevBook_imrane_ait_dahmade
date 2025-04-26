@@ -20,7 +20,6 @@ class Devlopeur {
       return false;
     }
   }
-
   async find(name, password) {
     try {
       const result = await db.find('devlopeurs', { name, password });
@@ -58,6 +57,6 @@ class Devlopeur {
 //   });
 
 
-const dev = new Devlopeur();
-const h = dev.find('holls', 'nammi');
+// const dev = new Devlopeur();
+// const h = dev.find('holls', 'nammi');
 module.exports = Devlopeur;
