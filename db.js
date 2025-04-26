@@ -88,6 +88,22 @@ class Db {
 
 
    }
+   async Delete (table,id){
+  
+
+        const query = `DELETE FROM ${table} WHERE id = ${id} `;
+        try{
+            // console.log(id , typeof(id));
+            const result = await this.queryAsync(query,id);
+            console.log('bien il est suprimer ');
+            return result;         
+        }catch(err){
+            console.log('il y a probleme que delete non travaille');
+            return false;
+        }
+
+
+   }
    
    queryAsync(query, params) {
     return new Promise((resolve, reject) => {

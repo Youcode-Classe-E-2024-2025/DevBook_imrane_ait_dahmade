@@ -2,7 +2,7 @@ const db = require('../../db');
 
 
 class Livre {
-    constructor(name,content,auteur,catgorie) {
+    constructor(name, content, auteur, catgorie) {
         this.id;
         this.name = name;
         this.content = content;
@@ -10,27 +10,27 @@ class Livre {
         this.catgorie = catgorie;
     }
 
-    async All(){     
-try{
-    const result =await db.All('livres');
-        console.log('i all recuperer ',result);
-        return result;
-}catch(err){
-    console.log('erro il y a probleme ',err);
-    return false;
-}
+    async All() {
+        try {
+            const result = await db.All('livres');
+            console.log('i all recuperer ', result);
+            return result;
+        } catch (err) {
+            console.log('erro il y a probleme ', err);
+            return false;
+        }
     }
 
-    async create(name,content,auteur_id,categorie_id){
-        try{
-            const result = db.create('livres',{
-                name,content,auteur_id,categorie_id
+    async create(name, content, auteur_id, categorie_id) {
+        try {
+            const result = db.create('livres', {
+                name, content, auteur_id, categorie_id
             });
-            console.log('cree livre ',result);
+            console.log('cree livre ', result);
             return result
-        }catch(err){
-            console.log('i not created people want a book',err);
-            return false ;
+        } catch (err) {
+            console.log('i not created people want a book', err);
+            return false;
         }
 
     }
@@ -49,12 +49,23 @@ try{
             return false;
         }
     }
-    
-    
+    async Delete(id) {
+        try {
+            const result = db.Delete('livres',id);
+            console.log('i am deleted ', result);
+            return result;
+
+        } catch (error) {
+            console.log('non error he is not want to delete ');
+            return false;
+        }
+    }
+
+
 
 }
 const ListeLivres = new Livre();
-ListeLivres.update('id','4','name','iachrea');
+ListeLivres.Delete(2);
 
 
 module.exports = Livre;
