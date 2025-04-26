@@ -64,8 +64,7 @@ class Livre {
 
 
 }
-const ListeLivres = new Livre();
-ListeLivres.Delete(2);
+
 
 
 module.exports = Livre;
