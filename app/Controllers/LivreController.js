@@ -29,9 +29,20 @@ class LivreController {
             return false
         }
     }
+    async FiltrerParAuteur (auteur){
+        try{
+            const Filtrer = await Book.Filtrage('auteur_id' ,auteur);
+            console.log('test');
+            return Filtrer;
+        }
+        catch(err){
+            console.log('test error');
+            return false
+        }
+    }
 }
 
 const filtrer = new LivreController;
-filtrer.FiltrerParCategorie(1);
+filtrer.FiltrerParAuteur(7);
 
 module.exports = LivreController;
