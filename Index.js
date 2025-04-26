@@ -5,7 +5,7 @@ const app = express();
 //creat le port 
 const port = 3000;
 
-const Routes = require('./routes/Auth');
+const Routes = require('./routes/Route');
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));

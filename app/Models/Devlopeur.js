@@ -1,25 +1,50 @@
-const connection = require('../../db');
+const db = require('../../db');
 
-class Developer {
-  constructor() {
-    if (!connection) {
-      throw new Error('La connexion à la base de données a échoué');
-    }
-    this.db = connection;
+
+
+class Devlopeur {
+  constructor(name) {
+    this.name = name;
+    this.password;
+    this.id;
   }
 
-  create(name, password) {
-    const query = 'INSERT INTO devlopeurs (name, password) VALUES (?, ?)';
 
-    this.db.query(query, [name, password], (err, results) => {
-      if (err) {
-        console.error('Erreur lors de l\'insertion du développeur :', err);
-        return;
-      }
-      console.log('Développeur ajouté avec succès', results);
-    });
+ 
+    async create(name,password){
+   
+    const CreateEnDb = db.create('devlopeurs' , ['name' , 'password']);
+  
+
+
+
+
   }
 }
 
+// const CreatePromise = new Promise((resolve,rejected)=>{
+//  const issuccess = true;
+//   if(issuccess){
+//    setTimeout(() => {
+//     console.log('hello i am created ');
+//     resolve();
+//    }, 1000);
 
-module.exports = Developer;
+//   }
+//   else {
+//     console.log('i am sorry but i am error');
+//     rejected();
+//   }
+
+// });
+
+// CreatePromise.then(function(){
+//   console.log('i am happy ')})
+//   .catch(function (err) {
+//     console.log('error ' ,err)
+//   });
+
+
+const dev = new Devlopeur();
+const h = dev.create('holls' ,'nammi');
+module.exports = Devlopeur;
