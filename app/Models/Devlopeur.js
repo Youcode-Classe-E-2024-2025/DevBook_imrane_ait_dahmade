@@ -9,7 +9,7 @@ class Devlopeur {
   }
 
 
- 
+
   async create(name, password) {
     try {
       const result = await db.create('devlopeurs', { name, password });
@@ -21,10 +21,18 @@ class Devlopeur {
     }
   }
 
-  async find(name,password){
-    
+  async find(name, password) {
+    try {
+      const result = await db.find('devlopeurs', { name, password });
+      console.log('i am find my self', result);
+      return result;
+    }
+    catch (err) {
+      console.log('hi i am not found ', err);
+      return false;
+    }
   }
-  
+
 }
 
 // const CreatePromise = new Promise((resolve,rejected)=>{
@@ -51,5 +59,5 @@ class Devlopeur {
 
 
 const dev = new Devlopeur();
-const h = dev.create('holls' ,'nammi');
+const h = dev.find('holls', 'nammi');
 module.exports = Devlopeur;

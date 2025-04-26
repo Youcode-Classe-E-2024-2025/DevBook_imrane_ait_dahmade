@@ -43,13 +43,13 @@ class Db {
 
    }
 
-   async findWhiteAllKeys(table,data){
+   async find(table,data){
     const keys = Object.keys(data);
     const values = Object.values(data);
    
 
     const whereClause = keys.map(key => `${key} = ?`).join(' AND ');
-    const query = 'SELECT * FROM TABLE ${table} where ${whereClause}';
+    const query = `SELECT * FROM  ${table} where ${whereClause}`;
 
     try {
         const result  = await this.queryAsync(query,values);
