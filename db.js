@@ -71,7 +71,22 @@ class Db {
         return false ;
     }
    }
+   async Update(table,data){
 
+    const  {Column,NouvelleColumn,Condition , ConditionValue} = data;
+
+        const query = `UPDATE  ${table} SET ${Column} =  ? WHERE ${Condition} = ? `;
+        try{
+            result = await this.queryAsync(query ,[NouvelleColumn,ConditionValue]);
+            console.log('i am update ',result);
+            return result
+        }catch(err){
+            console.log(' i not update why ',err);
+            return false 
+        }
+
+
+   }
    
    queryAsync(query, params) {
     return new Promise((resolve, reject) => {
