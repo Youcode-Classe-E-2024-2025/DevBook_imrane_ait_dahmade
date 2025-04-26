@@ -12,6 +12,7 @@ class Devlopeur {
 
   async create(name, password) {
     try {
+    
       const result = await db.create('devlopeurs', { name, password });
       console.log('Développeur inséré avec succès:', result);
       return result;
@@ -20,9 +21,9 @@ class Devlopeur {
       return false;
     }
   }
-  async find(name, password) {
+  async find(data) {
     try {
-      const result = await db.find('devlopeurs', { name, password });
+      const result = await db.find('devlopeurs', data);
       console.log('i am find my self', result);
       return result;
     }
@@ -59,4 +60,8 @@ class Devlopeur {
 
 // const dev = new Devlopeur();
 // const h = dev.find('holls', 'nammi');
-module.exports = Devlopeur;
+
+
+const devlopeur = new Devlopeur;
+
+module.exports = devlopeur;

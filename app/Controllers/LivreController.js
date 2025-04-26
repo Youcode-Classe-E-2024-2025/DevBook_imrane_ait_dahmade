@@ -18,6 +18,12 @@ class LivreController {
             res.status(500).send('Internal Server Error');
         }
     }
+    async FiltrerParCategorie (categorie){
+        try{
+            const Filtrer = await Book.find(categorie);
+        }
+
+    }
 }
 
 

@@ -7,9 +7,10 @@ const port = 3000;
 
 const Routes = require('./routes/Route');
 
-app.use(express.json()); 
-app.use(express.urlencoded({ extended: true }));
 
+
+app.use(express.urlencoded({ extended: true })); // Pour les formulaires classiques
+app.use(express.json()); // Si tu veux aussi gérer du JSON
 // app.use(express.static('public'));
 // app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, 'app/views'));
@@ -29,6 +30,15 @@ app.use('/',Routes);
 // app.get('/', (req, res) => {
 //     res.render('Welecom');
 //   });
+
+// app.post('/register', (req, res) => {
+//     // Affiche ce que le serveur reçoit du formulaire
+//     console.log(req.body);
+  
+//     // Si tout va bien, on envoie une réponse positive
+//     res.send('Formulaire reçu !');
+//   });
+  
 
 app.listen(port ,()=>{
     console.log('i am listen');

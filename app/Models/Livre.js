@@ -70,12 +70,20 @@ class Livre {
             return false ;
         }
     }
+    async Filtrage(KeyCondition,Condition){
+        try{
+            const result = await db.Filtrage('livres',KeyCondition,Condition);
+            console.log('filter par :',result);
+            return result;
+        }catch(err){
+            console.log('error ');
+            return false;
+        }
+    }
     
-
-
 }
+const filter = new Livre;
+filter.Filtrage('categorie_id',1);
 
-const findlivre = new Livre();
-findlivre.find('3');
 
 module.exports = Livre;

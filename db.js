@@ -104,7 +104,19 @@ class Db {
 
 
    }
+   async Filtrage(table ,key,value){
+    const query = `SELECT * FROM ${table} WHERE ${key} = ${value}`;
 
+    try{
+        const result = await this.queryAsync(query , [key,value]);
+        console.log('filtrage excute' );
+return result;
+    }catch(err){
+        console.log(err);
+        return false ;
+    }
+
+   }
    
    queryAsync(query, params) {
     return new Promise((resolve, reject) => {

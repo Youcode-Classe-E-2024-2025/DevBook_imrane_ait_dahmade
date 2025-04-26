@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Youcode-Classe-E-2024-2025/DevBook_imrane_ait_dahmade#readme",
   "dependencies": {
+    "axios": "^1.9.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "mysql": "^2.18.1"
