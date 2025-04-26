@@ -20,7 +20,10 @@ class Devlopeur {
       return false;
     }
   }
-  
+
+  async find(name,password){
+    
+  }
   
 }
 

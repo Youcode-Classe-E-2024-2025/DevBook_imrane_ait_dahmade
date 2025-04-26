@@ -42,6 +42,25 @@ class Db {
       }
 
    }
+
+   async findWhiteAllKeys(table,data){
+    const keys = Object.keys(data);
+    const values = Object.values(data);
+   
+
+    const whereClause = keys.map(key => `${key} = ?`).join(' AND ');
+    const query = 'SELECT * FROM TABLE ${table} where ${whereClause}';
+
+    try {
+        const result  = await this.queryAsync(query,values);
+        console.log('il trouver : ',result);
+        return result;
+
+    }catch(err){
+    console.error('je ne trouver pas ' , err);
+    return false;
+    }
+   }
    queryAsync(query, params) {
     return new Promise((resolve, reject) => {
       this.connection.query(query, params, (err, results) => {
