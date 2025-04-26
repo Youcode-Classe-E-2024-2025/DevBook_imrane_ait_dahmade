@@ -60,7 +60,7 @@ class Db {
    }
    async All(table){
     const query = `SELECT * FROM ${table} `;
-    
+
     try{
         const result = await this.queryAsync(query,null);
         console.log('this is All ' ,result );
@@ -71,6 +71,8 @@ class Db {
         return false ;
     }
    }
+
+   
    queryAsync(query, params) {
     return new Promise((resolve, reject) => {
       this.connection.query(query, params, (err, results) => {
