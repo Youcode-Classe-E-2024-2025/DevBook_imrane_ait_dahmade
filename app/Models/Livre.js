@@ -82,8 +82,8 @@ class Livre {
     }
     
 }
-const filter = new Livre;
-filter.Filtrage('categorie_id',1);
+// const filter = new Livre;
+// filter.Filtrage('categorie_id',1);
 
 
 module.exports = Livre;

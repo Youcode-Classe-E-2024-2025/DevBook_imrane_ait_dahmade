@@ -18,13 +18,20 @@ class LivreController {
             res.status(500).send('Internal Server Error');
         }
     }
-    async FiltrerParCategorie (categorie){
+    async FiltrerParCategorie (catgorie){
         try{
-            const Filtrer = await Book.find(categorie);
+            const Filtrer = await Book.Filtrage('categorie_id' ,catgorie);
+            console.log('test');
+            return Filtrer;
         }
-
+        catch(err){
+            console.log('test error');
+            return false
+        }
     }
 }
 
+const filtrer = new LivreController;
+filtrer.FiltrerParCategorie(1);
 
 module.exports = LivreController;
