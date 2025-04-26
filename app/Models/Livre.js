@@ -34,14 +34,27 @@ try{
         }
 
     }
-    async update(id){
-        
+    async update(conditionColumn, conditionValue, updateColumn, newValue) {
+        try {
+            const result = await db.Update('livres', {
+                Column: updateColumn,
+                NouvelleColumn: newValue,
+                Condition: conditionColumn,
+                ConditionValue: conditionValue
+            });
+            console.log('i am updated', result);
+            return result;
+        } catch (err) {
+            console.log('i am not updated, I have a problem', err);
+            return false;
+        }
     }
+    
     
 
 }
 const ListeLivres = new Livre();
-ListeLivres.create('imrane','hello i am imrane ',57,1);
+ListeLivres.update('id','4','name','iachrea');
 
 
 module.exports = Livre;
